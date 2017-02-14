@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script >
+    // Code goes here
+    $(function() {
+    jQuery.fn.extend({
+        disable: function(state) {
+            return this.each(function() {
+                this.disabled = state;
+            });
+        }
+    });
+    
+    $('input[type="submit"], input[type="button"], button').disable(true);
+    setTimeout(function(){
+    	$('input[type="submit"], input[type="button"], button').disable(false);
+    },2700)
+});
+
+    
+    
+    </script>
+  </head>
+
+  <body>
+    <h1>Hello Plunker!</h1>
+    
+    
+    
+    <p>
+      <input type="submit" class="btn" value="My Input Submit"/>
+<input type="button" class="btn" value="My Input Button"/>
+<button class="btn">My Button</button>
+    </p>
+    
+  </body>
+
+
+
+</html>
