@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+<div>
+Phone Number:- {{phone}}
+</div>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    
+       
+$scope.spacehypheninPhoneNumber = function (strs) {
+
+      const regex = /^(\+91)/;
+      //const strs = "+911147005555, +911147005556, +919999973703";
+      const subst = "\$1 - ";
+      const space = " ";
+      var replaced = strs.replace(/ /g, '');
+      var getAllNumbers = replaced.split(',');
+      var finalResult = '';
+      for (var i = 0; i < getAllNumbers.length; i++) {
+
+          console.log('Substitution result: ', getAllNumbers[i]);
+          const result = getAllNumbers[i].replace(regex, subst);
+
+          console.log('Substitution result: ', result);
+          if(i==0){
+              finalResult += space+ result;
+          }else{
+               finalResult += ","+space+ result;
+          }
+
+      }
+      return finalResult;
+  }
+  
+  $scope.phone = "+911147005555, +911147005556, +919999973703";
+  $scope.phone = $scope.spacehypheninPhoneNumber($scope.phone);
+    
+    
+    
+    
+    
+    
+});
+</script>
+
+</body>
+</html>
