@@ -1,5 +1,5 @@
 
-The + sign is a special character in regex
+/*The + sign is a special character in regex
 
 Quantifier — Matches between one and unlimited times, as many times as possible, giving back as needed (greedy) (from regex101.com)
 It needs to be escaped if you want to match against the string literal +:
@@ -8,7 +8,7 @@ It needs to be escaped if you want to match against the string literal +:
 will match.
 
 An example replacement like you want it to have would be (again from regex101.com)
-
+*/
 
 // Code goes here
 
@@ -21,6 +21,12 @@ const result = str.replace(regex, subst);
 
 console.log('Substitution result: ', result);
 
-It will replace only one +91/^(\+91)/g 
+/*It will replace only one +91/^(\+91)/g 
 
 But it will always repaces all +91 in the string /(\+91)/g? 
+
+
+^ indicates that the match should be at the start of the string, without that, it matches every occurrence 
+
+
+*/
