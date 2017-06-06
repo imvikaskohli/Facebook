@@ -1,0 +1,34 @@
+<!-- http://momentjs.com/docs/#/parsing/string/ 
+http://momentjs.com/
+http://momentjs.com/docs/#/manipulating/subtract/
+http://momentjs.com/docs/#/manipulating/add/
+-->
+
+
+<span id="output"></span>
+
+
+<span id="output1"></span>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js">
+
+</script>
+
+<script>
+
+//var momentObj = moment("12:15 PM", ["h:mm A"])
+//document.getElementById("output").innerText = momentObj.format("HH:mm");
+
+
+var myDate1 = '2017-06-02 7:00 AM';
+var d2 = moment("12-25-1995", "MM-DD-YYYY");
+alert(d2)
+var myDate = moment(myDate1,'YYYY-MM-DD hh:mm a');
+alert(myDate);
+myDate.subtract(1,'hours');
+
+
+
+document.getElementById("output1").innerText = myDate;
+
+</script>
